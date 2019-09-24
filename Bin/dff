@@ -1,0 +1,2 @@
+#!/bin/bash
+find -maxdepth 1 -exec du -sk {} \;|sort -rn|head|while read size loc; do echo "scale=2; $size/1024" |bc|gawk '{ print $1"MB '"$loc"' " }';done|column -t

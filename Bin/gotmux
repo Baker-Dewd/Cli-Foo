@@ -1,0 +1,6 @@
+#!/bin/bash
+tmux new -s gotmux0 \; \
+send-keys 'cmatrix -bC yellow' C-m \; split-window -v -p 75\; \
+select-pane -t 0 \; split-window -h -p 72 \; send-keys 'nmon' C-m c d . \; split-window -h -p 70 \; send-keys 'iftop' C-m \; split-window -h -p 60 \; send-keys 'cmatrix -B' C-m \; \
+select-pane -t 4 \; 
+
