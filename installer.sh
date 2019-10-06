@@ -13,3 +13,4 @@ ln -s ~/Cli-Foo/DotFiles/tmux.conf ~/.tmux.conf
 [[ -f ~/bin ]] && rm -rf ~/bin
 ln -s ~/Cli-Foo/Bin ~/bin
 
+## Add Compile Function for cmatrix and nmon
