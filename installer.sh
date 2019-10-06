@@ -10,8 +10,10 @@ ln -s ~/Cli-Foo/DotFiles/bashrc ~/.bashrc
 [[ -f ~/.tmux.conf ]] && rm -f ~/.tmux.conf
 ln -s ~/Cli-Foo/DotFiles/tmux.conf ~/.tmux.conf
 
-[[ -f ~/bin ]] && rm -rf ~/bin
+[[ -e ~/bin ]] && rm -rf ~/bin
 ln -s ~/Cli-Foo/Bin ~/bin
+
+source  ~/.bashrc
 
 ## Add Compile Function for cmatrix and nmon
 ## Add to Bashrc : Check for code changes to push everyting you login. 
