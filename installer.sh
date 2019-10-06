@@ -14,3 +14,4 @@ ln -s ~/Cli-Foo/DotFiles/tmux.conf ~/.tmux.conf
 ln -s ~/Cli-Foo/Bin ~/bin
 
 ## Add Compile Function for cmatrix and nmon
+## Add to Bashrc : Check for code changes to push everyting you login. 
