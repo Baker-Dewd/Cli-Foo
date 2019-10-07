@@ -41,12 +41,16 @@ function MyPrompt {
         fi
 
 ## I will loop this funciton soon. Perhaps Animations? Colors?
-#      SEPARATORHORIZONTAL="____________________\n 
-#      SEPARATORHORIZONTAL="--------------------\n
-#      SEPARATORHORIZONTAL="+*+*+*+*+*+*+*+*+*+*\n
+#      SEPARATORHORIZONTAL=" ____________________" 
+#      SEPARATORHORIZONTAL=" --------------------"
+#      SEPARATORHORIZONTAL=" +*+*+*+*+*+*+*+*+*+*"
+#      SEPARATORHORIZONTAL=" +*+*+*+*+*+*+*+*+*+*" 
+#      SEPARATORHORIZONTAL=" -*-*-*-*-*-*-*-*-*-*"
+#      SEPARATORHORIZONTAL=" -${RED}*$WHITE}-${BLUE}*${WHITE}-${YELLOW}*${WHITE}-${GREEN}*${WHITE}-${YELLOW}*${WHITE}-${MEGENTA}*${WHITE}-${CYAN}*${WHITE}-${WHITE}*${WHITE}-${BLUE}*${WHITE}-${GREEN}*${ALLOFF}"
 
 
-        SEPARATORHORIZONTAL=" +*+*+*+*+*+*+*+*+*+*" 
+
+        SEPARATORHORIZONTAL=" ${CYAN}*${WHITE}-${RED}*${WHITE}-${BLUE}*${WHITE}-${YELLOW}*${WHITE}-${GREEN}*${WHITE}-${YELLOW}*${WHITE}-${MEGENTA}*${WHITE}-${CYAN}*${WHITE}-${RED}*${WHITE}-${BLUE}*${WHITE}-${GREEN}*${OFF}"
         NEWLINE="\n"
         SEPARATORVERTICAL="${WHITE}|"
         DISPLAYUSERATHOST="${UID_COLOR}\u${YELLOW}@${UID_COLOR}\h"
@@ -55,14 +59,13 @@ function MyPrompt {
         DISPLAYTWODIGITYEAR="${MAGENTA}\D{%g}"
         DISPLAYTIME="${CYAN}Time: \@"
         WORKINGDIR="${WHITE} \w"
-        ALLOFF="${OFF}"
         
 
 PROMPT="${SEPARATORHORIZONTAL} ${NEWLINE} \
 ${DISPLAYDAY} ${SEPARATORVERTICAL} ${DISPLAYUSERATHOST} ${NEWLINE} \
 ${DISPLAYMONTH} ${SEPARATORVERTICAL} ${DISPLAYTIME} ${NEWLINE} \
 ${DISPLAYTWODIGITYEAR} ${SEPARATORVERTICAL} ${WORKINGDIR} ${NEWLINE} \
-${ALLOFF}"
+${OFF}"
 
         if [ "${EXITSTATUS}" -eq 0 ]
         then
