@@ -10,6 +10,10 @@ ln -s ~/Cli-Foo/DotFiles/bashrc ~/.bashrc
 [[ -f ~/.tmux.conf ]] && rm -f ~/.tmux.conf
 ln -s ~/Cli-Foo/DotFiles/tmux.conf ~/.tmux.conf
 
+[[ -f ~/.vimrc ]] && rm -f ~/.vimrc
+ln -s ~/Cli-Foo/DotFiles/vimrc ~/.vimrc
+
+
 [[ -e ~/bin ]] && rm -rf ~/bin
 ln -s ~/Cli-Foo/Bin ~/bin
 

@@ -15,8 +15,12 @@ export VISUAL=vim
 ## Prompt Magick
 function MyPrompt {
 
-	SEPARATORPATTERN="-"
-	SEPARATORLENGTH="1"
+    ## This is for a later project
+    #   echo -n ${SEPARATORPATTERN} | wc -c
+	SEPARATORPATTERN="*+"
+	SEPARATORLENGTH="1" ## =LEN(SEPARATORPATTERN)/LEN(SEPARATORPATTERN)
+    SEPARATORWIDTH=15
+
         EXITSTATUS="$?"
         BOLD="\[\033[1m\]"
         OFF="\[\033[m\]"
@@ -36,15 +40,35 @@ function MyPrompt {
                 UID_COLOR=${WHITE}
         fi
 
-#        PROMPT="____________________\n ${MAGENTA}\D{%d} ${WHITE}|${UID_COLOR} \u${YELLOW}@${UID_COLOR}\h${MAGENTA} \n \D{%m}${WHITE} |${CYAN} Time: \@ \n ${MAGENTA}\D{%g}${WHITE} |${WHITE} \w \n${OFF}"
-#        PROMPT="--------------------\n ${MAGENTA}\D{%d} ${WHITE}|${UID_COLOR} \u${YELLOW}@${UID_COLOR}\h${MAGENTA} \n \D{%m}${WHITE} |${CYAN} Time: \@ \n ${MAGENTA}\D{%g}${WHITE} |${WHITE} \w \n${OFF}"
-        PROMPT="+*+*+*+*+*+*+*+*+*+*\n ${MAGENTA}\D{%d} ${WHITE}|${UID_COLOR} \u${YELLOW}@${UID_COLOR}\h${MAGENTA} \n \D{%m}${WHITE} |${CYAN} Time: \@ \n ${MAGENTA}\D{%g}${WHITE} |${WHITE} \w \n${OFF}"
+## I will loop this funciton soon. Perhaps Animations? Colors?
+#      SEPARATORHORIZONTAL="____________________\n 
+#      SEPARATORHORIZONTAL="--------------------\n
+#      SEPARATORHORIZONTAL="+*+*+*+*+*+*+*+*+*+*\n
+
+
+        SEPARATORHORIZONTAL=" +*+*+*+*+*+*+*+*+*+*" 
+        NEWLINE="\n"
+        SEPARATORVERTICAL="${WHITE}|"
+        DISPLAYUSERATHOST="${UID_COLOR}\u${YELLOW}@${UID_COLOR}\h"
+        DISPLAYDAY="${MAGENTA}\D{%d}"
+        DISPLAYMONTH="${MAGENTA}\D{%m}"
+        DISPLAYTWODIGITYEAR="${MAGENTA}\D{%g}"
+        DISPLAYTIME="${CYAN}Time: \@"
+        WORKINGDIR="${WHITE} \w"
+        ALLOFF="${OFF}"
+        
+
+PROMPT="${SEPARATORHORIZONTAL} ${NEWLINE} \
+${DISPLAYDAY} ${SEPARATORVERTICAL} ${DISPLAYUSERATHOST} ${NEWLINE} \
+${DISPLAYMONTH} ${SEPARATORVERTICAL} ${DISPLAYTIME} ${NEWLINE} \
+${DISPLAYTWODIGITYEAR} ${SEPARATORVERTICAL} ${WORKINGDIR} ${NEWLINE} \
+${ALLOFF}"
 
         if [ "${EXITSTATUS}" -eq 0 ]
         then
-                PS1="${PROMPT} ${BOLD}${GREEN}] ${OFF}"
+                PS1="${PROMPT}${BOLD}${GREEN}] ${OFF}"
         else
-                PS1="${PROMPT} ${BOLD}${RED}] ${OFF}"
+                PS1="${PROMPT}${BOLD}${RED}] ${OFF}"
         fi
 
     PS2="${BOLD}>${OFF} "
