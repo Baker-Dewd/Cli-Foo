@@ -43,7 +43,6 @@ function MyPrompt {
 ## I will loop this funciton soon. Perhaps Animations? Colors?
 #      SEPARATORHORIZONTAL=" ____________________" 
 #      SEPARATORHORIZONTAL=" --------------------"
-#      SEPARATORHORIZONTAL=" +*+*+*+*+*+*+*+*+*+*"
 #      SEPARATORHORIZONTAL=" +*+*+*+*+*+*+*+*+*+*" 
 #      SEPARATORHORIZONTAL=" -*-*-*-*-*-*-*-*-*-*"
 #      SEPARATORHORIZONTAL=" -${RED}*$WHITE}-${BLUE}*${WHITE}-${YELLOW}*${WHITE}-${GREEN}*${WHITE}-${YELLOW}*${WHITE}-${MEGENTA}*${WHITE}-${CYAN}*${WHITE}-${WHITE}*${WHITE}-${BLUE}*${WHITE}-${GREEN}*${ALLOFF}"
