@@ -1,0 +1,123 @@
+# .bashrc
+# Source global definitions
+
+if [ -f /etc/bashrc ]; then
+        . /etc/bashrc
+fi
+
+# File for service authentication outside of Git.
+if [ -f ~/auths/.bash-auths ]; then
+        . ~/auths/.bash-auths
+fi
+
+# set PATH so it includes user's private rust bin if it exists
+if [ -d "$HOME/.cargo/bin" ] ; then PATH="$HOME/.cargo/bin:$PATH" 
+fi
+
+# Add the ~/Bin Path
+PATH="$PATH:$HOME/Bin"
+
+## Aliases
+alias ip='ip -c -h -s'
+alias ifconfig='ip a'
+alias anping='ansible -i ~/inventory.yml all -m ping'
+alias ls='ls --color'
+alias ackack='source ~/.venv/bin/activate'
+alias dack='deactivate'
+alias vd='vagrant destroy -f'
+alias vu='vagrant up'
+
+export VISUAL=vim
+
+## Prompt Magick
+function MyPrompt {
+
+    ## Get on with Vars.  
+        EXITStatus=$?
+        BPID=$$ ## Bash Process ID. Good for killing another pane w/out using tmux commands.
+        CPU=$(Stat-CPU-Utilization.sh | xargs)
+        RAM=$(Stat-MemFree.sh | xargs)
+        GitB=`git branch --show-current 2> /dev/null`
+        BOLD="\[\033[1m\]"
+        OFF="\[\033[m\]"
+
+        RED="\[\033[1;31m\]"
+        GREEN="\[\e[32;1m\]"
+        BLUE="\[\e[34;1m\]"
+        YELLOW="\[\e[33;1m\]"
+        MAGENTA="\[\e[35;1m\]"
+        CYAN="\[\e[36;1m\]"
+        WHITE="\[\e[37;1m\]"
+
+        # If Root, Red. Else, White.        
+        if [ ${UID} -eq 0 ];
+        then UID_COLOR=${RED}
+        else UID_COLOR=${WHITE}
+        fi
+
+        # If Python Env place {}
+        if [[ -n $VIRTUAL_ENV ]] 
+        then VB="{"; VE="}" 
+        else VB="["; VE="]"
+        fi
+       
+        SEPARATORHORIZONTAL="${RED}:${WHITE}CPU${YELLOW}=${CYAN}${CPU}${RED}:${WHITE}Ram${YELLOW}=${CYAN}${RAM}${RED}:${WHITE}BPID${YELLOW}=${CYAN}${BPID}${RED}:${WHITE}E${YELLOW}=${CYAN}${EXITStatus}${RED}:"
+        SlashN="\n"
+        VertSep="${WHITE}|"
+        UserHost="${UID_COLOR}\u${MAGENTA} @ ${UID_COLOR}\h"
+        DispDy="${MAGENTA}\D{%d}"
+        DispMn="${MAGENTA}\D{%m}"
+        DispYr="${MAGENTA}\D{%g}"
+        DispTime="${CYAN}Time: \@"
+        WorkDir="${WHITE} \w"
+
+        if [ ${EXITStatus} != 0 ]
+        then StatA="${RED}${VB}${DispDy}${RED}${VE}${VertSep} ${UserHost}"
+        else StatA=" ${DispDy} ${VertSep} ${UserHost}"
+        fi
+
+        StatB=" ${DispMn} ${VertSep} ${DispTime}" ## Coming 'Soon'
+        
+        if [ ${EXITStatus} == 0 ]
+        then StatC="${GREEN}${VB}${DispYr}${GREEN}${VE}${VertSep} ${WorkDir}"
+        else StatC=" ${DispYr} ${VertSep}${WorkDir}"
+        fi
+
+        StatD="${GREEN}${GitB} ${WHITE}:] "
+        
+## Put it all together. 
+Prompt="${SEPARATORHORIZONTAL} ${SlashN} \
+${StatA} ${SlashN} \
+${StatB} ${SlashN} \
+${StatC} ${SlashN} \
+${StatD}${OFF}"
+
+  PS1=${Prompt}  
+  PS2="${BOLD}>${OFF} "
+}
+
+PROMPT_COMMAND=MyPrompt
+
+## Add Later
+
+# Yellow and middle brackets for Lilnux Signal Traps
+
+################
+#### Legend ####
+
+# *-*-*-*-*-*-*-*-*-*-* 
+#  0D | <user> @ <Host> 
+#  0M | Time: 02:46 AM 
+# {YR}|  ~/<pwd>
+# <IfGitBranch>:]
+
+# []          : No PyEnv
+# {}          : PyEnv
+
+# [{0D}] | No PyEnv, PyEnv, Red on last execute failure
+# [{0M}] | No PyEnv, PyEnv, Yellow on last execute warning
+# [{YR}] | No PyEnv, PyEnv, Green on last execute success
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+

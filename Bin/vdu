@@ -1,4 +1,4 @@
 #!/usr/bin/bash
-#ssh-keygen -f "/home/blayde/.ssh/known_hosts" -R "[0.0.0.0]:2222"
-vagrant destroy -f
+ssh-keygen -f "/home/blayde/.ssh/known_hosts" -R "[0.0.0.0]:2222"
+vagrant destroy 
 vagrant up

@@ -4,10 +4,10 @@ import os
 list = []
 
 for files in sorted(os.listdir()):
-    if files.endswith(".MP4"):
+    if files.endswith(".webm"):
         # Prints only text file present in My Folder
         list.append(files)
 
-        print(*list, sep = "\n")
+print(*list, sep = "\n")
 
-##
+

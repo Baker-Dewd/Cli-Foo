@@ -65,9 +65,9 @@ let &guicursor = &guicursor . ",a:blinkon0"
 
 set paste
 set modeline
-set tabstop=4 shiftwidth=4 expandtab
+set tabstop=2 shiftwidth=2 expandtab
 set background=dark
-set softtabstop=4
+set softtabstop=2
 
 syntax on
 filetype indent on

@@ -1,0 +1,2 @@
+#!/usr/bin/bash
+NuPy=$(which python3) ; printf '#!'"$NuPy\n\n" > $1 ; vim $1
