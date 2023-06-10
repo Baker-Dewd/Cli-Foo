@@ -1,0 +1,14 @@
+#!/usr/bin/bash
+# The purpose of this script is to quickly grab the correct interpreter 
+# in a landscape of changing environments or to specify a particular 
+# required interpreter. Also because I am lazy and typing out the 
+# whole shebang is boring. 
+# Todo: Menu for selecting from a set of available interpreters. 
+
+## Usage: Nuby <Interpreter> <filename>
+## This also pops you right into VIM. 
+
+terpreter=$1
+Nuby=$(which $terpreter) ; printf '#!'"$Nuby\n\n" > $2 ; vim $2
+
+
