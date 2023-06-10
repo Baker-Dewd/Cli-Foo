@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+for i in *.webp; do name=`echo "$i" | cut -d'.' -f1`; echo "$name"; convert "$i" "${name}.jpg"; done
+
+# Most Ubuntu desktop apps I use dont like the webp format. This will convert every webp file in a 
+# folder. 
+#
+# Requires imagemagick 6. 
+# # Todo: Imagemagick 7 when it's available for Mate 22.04. 
