@@ -5,4 +5,5 @@ for i in *.webp; do name=`echo "$i" | cut -d'.' -f1`; echo "$name"; convert "$i"
 # folder. 
 #
 # Requires imagemagick 6. 
-# # Todo: Imagemagick 7 when it's available for Mate 22.04. 
+## Todo: Imagemagick 7 when it's available for Mate 22.04. 
+## Reference: https://stackoverflow.com/questions/49591274/cli-command-to-convert-webp-images-to-jpg
