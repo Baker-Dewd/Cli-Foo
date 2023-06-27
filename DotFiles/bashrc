@@ -35,8 +35,8 @@ function MyPrompt {
     ## Get on with Vars.  
         EXITStatus=$?
         BPID=$$ ## Bash Process ID. Good for killing another pane w/out using tmux commands.
-        CPU=$(Stat-CPU-Utilization.sh | xargs)
-        RAM=$(Stat-MemFree.sh | xargs)
+        CPU=$(python3 ~/Bin/Py-Stat-CPU.py)
+        RAM=$(python3 ~/Bin/Py-Stat-RAM.py)
         GitB=`git branch --show-current 2> /dev/null`
         BOLD="\[\033[1m\]"
         OFF="\[\033[m\]"
