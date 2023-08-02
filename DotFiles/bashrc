@@ -98,6 +98,12 @@ ${StatD}${OFF}"
 
 PROMPT_COMMAND=MyPrompt
 
+# Pyenv Stuff
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+
 ## Add Later
 
 # Yellow and middle brackets for Lilnux Signal Traps
