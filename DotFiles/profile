@@ -10,6 +10,14 @@ eval "$(pyenv init -)"
 # Add the ~/Bin Path
 PATH="$PATH:$HOME/Bin"
 
+#if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
+#    source ~/.gnupg/.gpg-agent-info
+#    export GPG_AGENT_INFO
+#else
+#    eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
+#fi
+
+
 ## Aliases
 alias ip='ip -c -h -s'
 alias ifconfig='ip a'
@@ -19,6 +27,12 @@ alias ackack='source ~/.venv/bin/activate'
 alias dack='deactivate'
 alias vd='vagrant destroy -f'
 alias vu='vagrant up'
+alias cls='clear'
+alias ccls='cd;clear'
+alias ll='ls -l'
+alias awz='. ~/Authz/awscreds.sh $1'
+
+
 
 export VISUAL=vim
 
