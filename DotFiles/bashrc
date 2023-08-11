@@ -18,14 +18,9 @@ fi
 PATH="$PATH:$HOME/Bin"
 
 ## Aliases
-alias ip='ip -c -h -s'
-alias ifconfig='ip a'
-alias anping='ansible -i ~/inventory.yml all -m ping'
-alias ls='ls --color'
-alias ackack='source ~/.venv/bin/activate'
-alias dack='deactivate'
-alias vd='vagrant destroy -f'
-alias vu='vagrant up'
+if [ -f ~/Cli-Foo/DotFiles/aliasez ]; then
+        . ~/Cli-Foo/DotFiles/aliasez
+fi
 
 export VISUAL=vim
 

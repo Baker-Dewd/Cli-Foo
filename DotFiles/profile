@@ -19,18 +19,11 @@ PATH="$PATH:$HOME/Bin"
 
 
 ## Aliases
-alias ip='ip -c -h -s'
-alias ifconfig='ip a'
-alias anping='ansible -i ~/inventory.yml all -m ping'
-alias ls='ls --color'
-alias ackack='source ~/.venv/bin/activate'
-alias dack='deactivate'
-alias vd='vagrant destroy -f'
-alias vu='vagrant up'
-alias cls='clear'
-alias ccls='cd;clear'
-alias ll='ls -l'
-alias awz='. ~/Authz/awscreds.sh $1'
+## Made this an include file so I am not editing both .bashrc and .profile. 
+# File for service authentication outside of Git.
+if [ -f ~/Cli-Foo/DotFiles/aliasez ]; then
+        . ~/Cli-Foo/DotFiles/aliasez
+fi
 
 
 

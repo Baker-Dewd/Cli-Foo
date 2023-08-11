@@ -9,7 +9,7 @@ lg = !"git lg1"
 [user]
 	email = dan.baker@wellspring.com
 	name = dan.baker
-	signingkey = dan.baker@wellspring.com
+	signingkey = rsa3072/99C5C4C91E9BEADF
 [credential "https://github.com"]
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
