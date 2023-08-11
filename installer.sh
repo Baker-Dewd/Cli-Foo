@@ -15,8 +15,10 @@ ln -s ~/Cli-Foo/DotFiles/tmux.conf ~/.tmux.conf
 [[ -f ~/.vimrc ]] && rm -f ~/.vimrc
 ln -s ~/Cli-Foo/DotFiles/vimrc ~/.vimrc
 
+## We don't want to link the gitconfig as any changes on one host 
+## will End up in the repo and change commit info on another host. 
 [[ -f ~/.gitconfig ]] && rm -f ~/.gitconfig
-ln -s ~/Cli-Foo/DotFiles/gitconfig ~/.gitconfig
+cp ~/Cli-Foo/DotFiles/gitconfig ~/.gitconfig
 
 
 [[ -e ~/bin ]] && rm -rf ~/bin
