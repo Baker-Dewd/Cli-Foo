@@ -10,6 +10,7 @@ eval "$(pyenv init -)"
 # Add the ~/Bin Path
 PATH="$PATH:$HOME/Bin"
 
+## ToDo : Fix the GPG Varbable in bash / profile with the key in ~/Authz
 #if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
 #    source ~/.gnupg/.gpg-agent-info
 #    export GPG_AGENT_INFO
@@ -23,7 +24,6 @@ PATH="$PATH:$HOME/Bin"
 if [ -f ~/Cli-Foo/DotFiles/aliasez ]; then
         . ~/Cli-Foo/DotFiles/aliasez
 fi
-
 
 
 export VISUAL=vim
