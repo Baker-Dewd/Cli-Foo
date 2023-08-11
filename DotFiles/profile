@@ -20,7 +20,6 @@ PATH="$PATH:$HOME/Bin"
 
 ## Aliases
 ## Made this an include file so I am not editing both .bashrc and .profile. 
-# File for service authentication outside of Git.
 if [ -f ~/Cli-Foo/DotFiles/aliasez ]; then
         . ~/Cli-Foo/DotFiles/aliasez
 fi
