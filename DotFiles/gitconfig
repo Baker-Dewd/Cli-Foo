@@ -8,14 +8,14 @@ lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(
 lg = !"git lg1"
 
 [user]
-	email =
+	email = 
 	name = 
-	signingkey = 
+	signingkey =
 [credential "https://github.com"]
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
 [commit]
-	gpgsign = true
+	gpgsign = 
 [gpg "ssh"]
 	defaultKeyCommand = ssh-add -L
 [gpg]
