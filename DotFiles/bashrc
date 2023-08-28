@@ -30,7 +30,9 @@ function MyPrompt {
     ## Get on with Vars.  
         EXITStatus=$?
         BPID=$$ ## Bash Process ID. Good for killing another pane w/out using tmux commands.
+# Add conditionals here to detect Python. Use Bash otherwise. 
         CPU=$(python3 ~/Bin/Py-Stat-CPU.py)
+# Add conditionals here to detect Python. Use Bash otherwise. 
         RAM=$(python3 ~/Bin/Py-Stat-RAM.py)
         PyEnv=$(~/Bin/PyEnv.sh)
         GitB=`git branch --show-current 2> /dev/null`
@@ -57,7 +59,6 @@ function MyPrompt {
         else VB="["; VE="]"
         fi
        
-#        SEPARATORHORIZONTAL="${RED}:${WHITE}C${YELLOW}=${CYAN}${CPU}${RED}:${WHITE}R${YELLOW}=${CYAN}${RAM}${RED}:${WHITE}PID${YELLOW}=${CYAN}${BPID}${RED}:${WHITE}E${YELLOW}=${CYAN}${EXITStatus}${RED}:${WHITE}Py.v${YELLOW}=${CYAN}$PyEnv${RED}:"
         SEPARATORHORIZONTAL="${RED}:${WHITE}PID${YELLOW}=${CYAN}${BPID}${RED}:${WHITE}C${YELLOW}=${CYAN}${CPU}${RED}:${WHITE}R${YELLOW}=${CYAN}${RAM}${RED}:${WHITE}E${YELLOW}=${CYAN}${EXITStatus}${RED}:${WHITE}Py${YELLOW}=${CYAN}$PyEnv${RED}:"
         SlashN="\n"
         VertSep="${WHITE}|"
