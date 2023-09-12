@@ -31,9 +31,11 @@ function MyPrompt {
         EXITStatus=$?
         BPID=$$ ## Bash Process ID. Good for killing another pane w/out using tmux commands.
 # Add conditionals here to detect Python. Use Bash otherwise. 
-        CPU=$(python3 ~/Bin/Py-Stat-CPU.py)
+        CPU='n'
+#        CPU=$(python3 ~/Bin/Py-Stat-CPU.py)
 # Add conditionals here to detect Python. Use Bash otherwise. 
-        RAM=$(python3 ~/Bin/Py-Stat-RAM.py)
+        RAM='n'
+#        RAM=$(python3 ~/Bin/Py-Stat-RAM.py)
         PyEnv=$(~/Bin/PyEnv.sh)
         GitB=`git branch --show-current 2> /dev/null`
         BOLD="\[\033[1m\]"
@@ -119,4 +121,9 @@ PROMPT_COMMAND=MyPrompt
 
 # Generated for envman. Do not edit.
 #[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
+
+### TODO
+# Change got branch name to red on uncommited changed
+
 
