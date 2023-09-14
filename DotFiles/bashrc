@@ -10,6 +10,10 @@ if [ -f ~/auths/.bash-auths ]; then
         . ~/auths/.bash-auths
 fi
 
+if [ -d ~/Authz/Alisez ]; then
+        . ~/Authz/Alisez/*
+fi
+
 # set PATH so it includes user's private rust bin if it exists
 if [ -d "$HOME/.cargo/bin" ] ; then PATH="$HOME/.cargo/bin:$PATH" 
 fi
