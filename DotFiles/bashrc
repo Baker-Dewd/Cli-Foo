@@ -24,19 +24,37 @@ fi
 
 export VISUAL=vim
 
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+eval "$(pyenv virtualenv-init -)"
+
 ## Prompt Magick
 function MyPrompt {
 
     ## Get on with Vars.  
         EXITStatus=$?
         BPID=$$ ## Bash Process ID. Good for killing another pane w/out using tmux commands.
-# Add conditionals here to detect Python. Use Bash otherwise. 
-        CPU='n'
-#        CPU=$(python3 ~/Bin/Py-Stat-CPU.py)
-# Add conditionals here to detect Python. Use Bash otherwise. 
-        RAM='n'
-#        RAM=$(python3 ~/Bin/Py-Stat-RAM.py)
-        PyEnv=$(~/Bin/PyEnv.sh)
+
+        PyEnv="NaN"
+        if [ 'command -v pyenv' ]
+          then
+            PyEnv=$(pyenv versions | grep '*' | awk '{print $2}')
+        fi
+
+        CPU="Nan"
+        if [ $PyEnv != '' ]
+         then
+            CPU=$(python3 ~/Bin/Py-Stat-CPU.py)
+        fi
+        
+        RAM='NaN'
+        if [ $PyEnv != '' ]
+          then
+            RAM=$(python3 ~/Bin/Py-Stat-RAM.py)
+        fi
+
         GitB=`git branch --show-current 2> /dev/null`
         BOLD="\[\033[1m\]"
         OFF="\[\033[m\]"
@@ -97,7 +115,6 @@ ${StatD}${OFF}"
 }
 
 PROMPT_COMMAND=MyPrompt
-
 
 ## Add Later
 
