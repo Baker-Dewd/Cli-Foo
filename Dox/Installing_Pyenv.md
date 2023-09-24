@@ -17,7 +17,7 @@ curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv
 
 3. Set the Initial Env so CliFoo doesn't complain: 
 ```
-pyenv install 3.11.5 && pyenv local 3.11.5 && pip3 install psutil
+pyenv install 3.11.5 && pyenv global 3.11.5 && pip3 install psutil
 ```
 
 
