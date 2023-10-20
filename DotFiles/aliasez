@@ -10,4 +10,5 @@ alias cls='clear'
 alias ccls='cd;clear'
 alias ll='ls -l'
 alias awz='. ~/Authz/awscreds.sh $1'
+alias gfa='git fetch --all && git pull'
 
