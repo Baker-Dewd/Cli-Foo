@@ -61,6 +61,7 @@
             - gawk
             - sed
             - gh
+            - net-tools
 ## Languages
 #       - go
             - pip
@@ -81,6 +82,7 @@
             - libffi-dev 
             - liblzma-dev
             - llvm
+            - build-essential
 ## Remote storage solutions
 ## s3, ceph, etc.            
             - nfs-kernel-server
