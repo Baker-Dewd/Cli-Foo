@@ -11,4 +11,7 @@ alias ccls='cd;clear'
 alias ll='ls -l'
 alias awz='. ~/Authz/awscreds.sh $1'
 alias gfa='git fetch --all && git pull'
-
+# Fetch all, pull remote changes from all primary repos.
+alias gipa='branch=(prod master stage qa  test dev); for i in ${branch[@]}; do git checkout $i && git fetch --all && git pull; done'
+# Run WellSpring Merge Loop prior to deploys to prod. 
+alias wsml='git checkout master; git fetch; branch=(dev test stage qa prod); for i in ${branch[@]}; do git checkout $i && git pull && git merge origin/master && git push origin $i; done'
