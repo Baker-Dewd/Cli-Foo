@@ -13,3 +13,4 @@ alias awz='. ~/Authz/awscreds.sh $1'
 alias gfa='git fetch --all && git pull'
 # Fetch all, pull remote changes from all primary repos.
 alias path='echo $PATH'
+alias tf='terraform'
