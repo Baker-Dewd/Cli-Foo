@@ -14,3 +14,6 @@ alias gfa='git fetch --all && git pull'
 # Fetch all, pull remote changes from all primary repos.
 alias path='echo $PATH'
 alias tf='terraform'
+alias dsac='docker stop $(docker ps -a -q)'
+alias drmac='docker rm $(docker ps -a -q)'
+
