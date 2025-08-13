@@ -20,8 +20,8 @@ ln -s ~/Cli-Foo/DotFiles/vimrc ~/.vimrc
 [[ -f ~/.gitconfig ]] && rm -f ~/.gitconfig
 cp ~/Cli-Foo/DotFiles/gitconfig ~/.gitconfig
 
-cd # Clone to our home folder so the prompts work. 
-git clone git@github.com:Baker-Dewd/Cli-Foo.git
+# Clone to our home folder so the prompts work. 
+git clone https://github.com/basspro-dan/Cli-Foo.git ~/Cli-Foo
 
 [[ -e ~/bin ]] && rm -rf ~/bin
 ln -s ~/Cli-Foo/Bin ~/Bin
