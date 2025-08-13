@@ -20,6 +20,9 @@ ln -s ~/Cli-Foo/DotFiles/vimrc ~/.vimrc
 [[ -f ~/.gitconfig ]] && rm -f ~/.gitconfig
 cp ~/Cli-Foo/DotFiles/gitconfig ~/.gitconfig
 
+workdir ~
+git clone git@github.com:Baker-Dewd/Cli-Foo.git
+
 
 [[ -e ~/bin ]] && rm -rf ~/bin
 ln -s ~/Cli-Foo/Bin ~/Bin
